@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.0.1'
-gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -21,6 +20,15 @@ gem 'omniauth-facebook'
 gem "paperclip", "~> 5.0.0"
 gem 'dropzonejs-rails'
 gem "figaro", "~> 1.1.0"
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 
 
